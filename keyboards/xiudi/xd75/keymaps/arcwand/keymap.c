@@ -48,9 +48,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		case PLOVER:
 			if (record->event.pressed) {
                 if (layer_state_is(_PL)) {
+                    // ps for plover stop
+                    // caught using sxhkd: super + ctrl + alt + shift + F12; ctrl+p; ctrl+s
                     SEND_STRING(SS_LGUI(SS_LCTL(SS_LALT(SS_LSFT(SS_TAP(X_F12))))) SS_LCTL("ps"));
                     layer_clear();
                 } else {
+                    // pr for plover resume
+                    // caught using sxhkd: super + ctrl + alt + shift + F12; ctrl+p; ctrl+r
                     SEND_STRING(SS_LGUI(SS_LCTL(SS_LALT(SS_LSFT(SS_TAP(X_F12))))) SS_LCTL("pr"));
                     layer_move(_PL);
                 }
