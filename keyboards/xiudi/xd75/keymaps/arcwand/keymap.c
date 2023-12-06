@@ -46,6 +46,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			break;
 		case PLOVER:
 			if (record->event.pressed) {
+                if (layer_state_is(_PL)) {
+                    SEND_STRING(SS_LGUI(SS_LCTL(SS_LALT(SS_LSFT(SS_TAP(X_F12))))) SS_LCTL("ps"));
+                    layer_clear();
+                } else {
+                    SEND_STRING(SS_LGUI(SS_LCTL(SS_LALT(SS_LSFT(SS_TAP(X_F12))))) SS_LCTL("pr"));
+                    layer_move(_PL);
+                }
 			} else {
 			}
 			break;
@@ -211,7 +218,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	* |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------------------------+--------|
 	* |        | Z      | X      | C      | V      | B      | LEFT   | DOWN   | RIGHT  | N      | M      | ,      | .      | /      |        |
 	* |--------+--------+--------+--------+--------+-----------------+--------+--------+--------+--------+-----------------+--------+--------|
-	* |        |        |        |        | C      | V      | SPACE  | LAYER  | BACKSP | N      | M      | ENTER  |        |        |        |
+	* |        |        |        |        | C      | V      | SPACE  | PLOVER | BACKSP | N      | M      | ENTER  |        |        |        |
 	* '--------------------------------------------------------------------------------------------------------------------------------------'
 	*/
    [_PL] = LAYOUT( /* PLOVER */
@@ -219,7 +226,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	   KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_LBRC, KC_PGDN, KC_RBRC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
 	   _______, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_HOME, KC_UP,   KC_END,  KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
 	   _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LEFT, KC_DOWN, KC_RGHT, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, _______,
-	   _______, _______, _______, _______, KC_C,    KC_V,    KC_SPC,  LAYER,   KC_BSPC, KC_N,    KC_M,    KC_ENT,  _______, _______, _______
+	   _______, _______, _______, _______, KC_C,    KC_V,    KC_SPC,  PLOVER,  KC_BSPC, KC_N,    KC_M,    KC_ENT,  _______, _______, _______
    ),
 };
 
