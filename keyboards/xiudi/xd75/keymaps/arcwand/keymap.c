@@ -86,9 +86,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * .--------------------------------------------------------------------------------------------------------------------------------------.
      * | ESC    | F1     | F2     | F3     | F4     | F5     | F6     |        | F7     | F8     | F9     | F10    | F11    | F12    | BACKSP |
      * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------|
-     * |        |        |        |TO(_KB) |TO(_MD) |        |        |        | LOCK   | HOME   | PG DN  | PG UP  | END    |        |        |
+     * |        |        |        | TO(KB) | TO(MD) |        |        |        | LOCK   | HOME   | PG DN  | PG UP  | END    |        |        |
      * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------+--------|
-     * |        |        |TO(_AP) |TO(_NP) |TO(_MV) |        |        |TO(_PL) |        | LEFT   | DOWN   | UP     | RIGHT  |        | ENTER  |
+     * |        |        | TO(AP) | TO(NP) | TO(MV) |        |        | PLOVER |        | LEFT   | DOWN   | UP     | RIGHT  |        | ENTER  |
      * |--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------+--------+--------+--------+--------|
      * |        |        |        |        | PR SCR | MENU   |        |        |        |        |        |        |        |        |        |
      * |--------+--------+--------+--------+--------+-----------------+--------+--------+--------+--------+-----------------+--------+--------|
@@ -98,9 +98,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_GT] = LAYOUT_ortho_5x15( /* GOTO */
 		KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_BSPC,
 		_______, _______, _______, TO(_KB), TO(_MD), _______, _______, _______, QK_LOCK, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______,
-		_______, _______, TO(_AP), TO(_NP), TO(_MV), _______, _______, TO(_PL), _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_ENT,
+		_______, _______, TO(_AP), TO(_NP), TO(_MV), _______, _______, PLOVER,  _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_ENT,
 		_______, _______, _______, _______, KC_PSCR, KC_APP,  _______, _______, _______, _______, _______, _______, _______, _______, _______,
-		_______, _______, _______, _______, LAYER,   _______, _______, _______, _______, _______, LAYER,   _______, _______, _______, _______
+		_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 	),
 
    /* MOVEMENT
@@ -121,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	   _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______,
 	   _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_ENT,
 	   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-	   _______, _______, _______, _______, LAYER,   _______, _______, _______, _______, _______, LAYER,   _______, _______, _______, _______
+	   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
    ),
 
    /* NUMPAD
@@ -142,7 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_P7,   KC_P8,   KC_P9,   KC_PMNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 	   _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_P4,   KC_P5,   KC_P6,   KC_PPLS, KC_PENT, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
 	   _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_P1,   KC_P2,   KC_P3,   KC_PEQL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
-	   _______, _______, _______, _______, LAYER,   KC_BSPC, KC_P0,   KC_PDOT, KC_PDOT, KC_BSPC, LAYER,   KC_DEL,  _______, _______, _______
+	   _______, _______, _______, _______, _______, KC_SPC,  KC_P0,   KC_PDOT, KC_PDOT, KC_BSPC, _______, KC_DEL,  _______, _______, _______
    ),
 
    /* APPKEYS
@@ -163,7 +163,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	   KC_TAB,       LALT(KC_UP),  LSA(KC_UP),   MEH(KC_UP),   LSFT(KC_PGUP),XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,
 	   _______,      LALT(KC_DOWN),LSA(KC_DOWN), MEH(KC_UP),   LSFT(KC_PGDN),XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      _______,      XXXXXXX,      XXXXXXX,
 	   _______,      LCTL(KC_I),   RCS(KC_E),    LCTL(KC_K),   LCTL(KC_PGUP),LCTL(KC_PGDN),XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,
-	   _______,      _______,      _______,      _______,      LAYER,        XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      LAYER,        XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX
+	   _______,      _______,      _______,      _______,      _______,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      _______,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX
    ),
 
    /* MEDIA
@@ -184,7 +184,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	   _______, KC_VOLD, KC_MUTE, KC_VOLU, _______, XXXXXXX, KC_CAPS, KC_NUM,  KC_SCRL,KC_WH_U,KC_MS_BTN1,KC_MS_U,KC_MS_BTN2,XXXXXXX,XXXXXXX,
 	   _______, KC_MPRV, KC_MPLY, KC_MNXT, KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX, KC_PAUS, KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX, _______,
 	   _______, XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
-	   _______, _______, _______, _______, LAYER,   _______, XXXXXXX, XXXXXXX, XXXXXXX, _______, LAYER,   _______, _______, _______, _______
+	   _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______
    ),
 
    /* KEYBOARD RGB
@@ -205,7 +205,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_TOG, RGB_RMOD,RGB_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 	   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 	   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-	   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LAYER,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LAYER,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+	   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
    ),
 
    /* PLOVER
